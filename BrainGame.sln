@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainGame", "BrainGame\BrainGame.csproj", "{45BD0444-E390-4BF8-B65C-B65B0CB59EC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45BD0444-E390-4BF8-B65C-B65B0CB59EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BD0444-E390-4BF8-B65C-B65B0CB59EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BD0444-E390-4BF8-B65C-B65B0CB59EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BD0444-E390-4BF8-B65C-B65B0CB59EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7691DA19-384E-440F-8685-6F6E2885D89A}
+	EndGlobalSection
+EndGlobal

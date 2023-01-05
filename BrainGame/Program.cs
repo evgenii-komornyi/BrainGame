@@ -1,10 +1,44 @@
 ﻿using BrainGame;
 
-Board board = new Board(5, 3);
+Board board = new Board(8, 8);
 
 List<Figure> figures = new List<Figure>();
 
 int[,] firstFigureForm = {
+    { 1, 1 },
+    { 1, 1 }
+};
+
+int[,] secondFigureForm =
+{
+    { 1, 1 },
+    { 1, 1 }
+};
+
+int[,] thirdFigureForm =
+{
+    { 1, 1 },
+    { 1, 1 }
+};
+
+int[,] fourthFigureForm = {
+    { 1, 1 },
+    { 1, 1 }
+};
+
+int[,] fifthFigureForm =
+{
+    { 1, 1 },
+    { 1, 1 }
+};
+
+int[,] sixthFigureForm =
+{
+    { 1, 1 },
+    { 1, 1 }
+};
+
+/*int[,] firstFigureForm = {
     { 1, 1 },
     { 0, 1 }, 
     { 1, 1 }
@@ -22,7 +56,7 @@ int[,] thirdFigureForm =
     { 3, 3 },
     { 3, 0 },
     { 3, 3 }
-};
+};*/
 
 /*int[,] firstFigureForm = {
     { 1, 1, 1, 1 }
@@ -65,19 +99,17 @@ int[,] sixthFigureForm =
 Figure firstFigure = new Figure(firstFigureForm, ConsoleColor.Green);
 Figure secondFigure = new Figure(secondFigureForm, ConsoleColor.Gray);
 Figure thirdFigure = new Figure(thirdFigureForm, ConsoleColor.Magenta);
-
-/*
 Figure fourthFigure = new Figure(fourthFigureForm, ConsoleColor.DarkGreen);
 Figure fifthFigure = new Figure(fifthFigureForm, ConsoleColor.Cyan);
-Figure sixthFigure = new Figure(sixthFigureForm, ConsoleColor.DarkRed);*/
+Figure sixthFigure = new Figure(sixthFigureForm, ConsoleColor.DarkRed);
 
 figures.Add(firstFigure);
 figures.Add(secondFigure);
 figures.Add(thirdFigure);
-/*figures.Add(fourthFigure);
+figures.Add(fourthFigure);
 figures.Add(fifthFigure);
 figures.Add(sixthFigure);
-*/
+
 
 if (!board.IsPossibleToPutAllFiguresOnBoard(figures, board.GameField))
 {

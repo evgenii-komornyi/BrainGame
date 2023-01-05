@@ -55,7 +55,7 @@
             BoardItem boardItem = new BoardItem()
             {
                 Symbol = " ",
-                Color = ConsoleColor.White
+                Color = ConsoleColor.Black
             };
 
             for (int currentRow = 0; currentRow < GameField.GetLength(0); currentRow++)

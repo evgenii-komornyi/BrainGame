@@ -19,20 +19,20 @@
             {
                 for (int i = start; i <= end; i++)
                 {
-                    swap(ref figures[start], ref figures[i]);
+                    swap(figures, start, i);
                     doPermutate(figures, start + 1, end, list);
-                    swap(ref figures[start], ref figures[i]);
+                    swap(figures, start, i);
                 }
             }
 
             return list;
         }
 
-        private static void swap(ref Figure firstFigure, ref Figure secondFigure)
+        private static void swap(List<Figure> figures, int start, int current)
         {
-            var temp = firstFigure;
-            firstFigure = secondFigure;
-            secondFigure = temp;
+            var temp = figures[start];
+            figures[start] = figures[current];
+            figures[current] = temp;
         }
     }
 }

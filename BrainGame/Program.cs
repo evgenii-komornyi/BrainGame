@@ -87,12 +87,13 @@ else
 {
     var permutedList = Permutation.permute(figures);
 
-    int countOfTriedList = board.TryAllListsOfFigures(board, permutedList);
+    int numberOfFailedAttempts = board.TryAllListsOfFigures(board, permutedList);
 
-    Console.SetCursorPosition(0, 10);
-    if (countOfTriedList != -1)
+    if (numberOfFailedAttempts != -1)
     {
-        Console.WriteLine($"count of tried list: {countOfTriedList}");
+        Console.SetCursorPosition(0, 50);
+        Console.WriteLine($"Numbers of failed attempts: {numberOfFailedAttempts}");
+        Console.WriteLine($"Success attempt in: {numberOfFailedAttempts + 1}");
         Console.WriteLine("All figures on the board.");
     }
     else

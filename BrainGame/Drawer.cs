@@ -13,7 +13,9 @@
 
                 for (int currentColumn = 0; currentColumn < board.GameField.GetLength(1); currentColumn++)
                 {
-                    Console.Write(board.GameField[currentRow, currentColumn]);
+                    Console.ForegroundColor = board.GameField[currentRow, currentColumn].Color;
+                    Console.Write(board.GameField[currentRow, currentColumn].Symbol);
+                    Console.ResetColor();
                 }
                 Console.WriteLine("");
             }

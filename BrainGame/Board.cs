@@ -2,12 +2,13 @@
 {
     internal class Board
     {
-        public int[,] GameField { get; set; }
+        public BoardItem[,] GameField { get; set; }
 
         public Board(int columns, int rows)
         {
-            GameField = new int[rows, columns];
-        }   
+            GameField = new BoardItem[rows, columns];
+            ClearBoard();
+        }
 
         public int TryAllListsOfFigures(Board board, List<List<Figure>> permutedFigures)
         {
@@ -61,7 +62,7 @@
             {
                 for (int currentColumn = 0; currentColumn < GameField.GetLength(1); currentColumn++)
                 {
-                    GameField[currentRow, currentColumn] = default(int);
+                    GameField[currentRow, currentColumn] = boardItem;
                 }
             }
         }
@@ -74,7 +75,13 @@
                 {
                     if (CanFigureBePlacedInCurrentPlace(figureForm, board, startBoardRow, startBoardColumn))
                     {
-                        PutFigureDataIntoBoard(board, figureForm, startBoardRow, startBoardColumn);
+                        BoardItem boardItem = new BoardItem()
+                        {
+                            Color = figure.Color,
+                            Symbol = figure.Symbol
+                        };
+
+                        PutFigureDataIntoBoard(board, figureForm, startBoardRow, startBoardColumn, boardItem);
                         figure.PositionX = startBoardRow;
                         figure.PositionY = startBoardColumn;
 
@@ -86,7 +93,7 @@
             return false;
         }
 
-        private void PutFigureDataIntoBoard(Board board, int[,] figure, int startBoardRow, int startBoardColumn)
+        private void PutFigureDataIntoBoard(Board board, int[,] figure, int startBoardRow, int startBoardColumn, BoardItem boardItem)
         {
             for (int currentFigureRow = 0; currentFigureRow < figure.GetLength(0); currentFigureRow++)
             {
@@ -94,7 +101,7 @@
                 {
                     if (figure[currentFigureRow, currentFigureColumn] != 0)
                     {
-                        board.GameField[startBoardRow + currentFigureRow, startBoardColumn + currentFigureColumn] = figure[currentFigureRow, currentFigureColumn];
+                        board.GameField[startBoardRow + currentFigureRow, startBoardColumn + currentFigureColumn] = boardItem;
                     }
                 }
             }
@@ -116,7 +123,7 @@
             return true;
         }
 
-        public bool IsPossibleToPutAllFiguresOnBoard(List<Figure> figures, int[,] board)
+        public bool IsPossibleToPutAllFiguresOnBoard(List<Figure> figures, BoardItem[,] board)
         {
             int amount = 0;
 
@@ -139,7 +146,7 @@
 
         private bool CanPutPixelInCurrentPosition(Board board, int[,] figure, int currentFigureColumn, int currentFigureRow, int startBoardColumn, int startBoardRow)
         {
-            return (figure[currentFigureRow, currentFigureColumn] == 0 || board.GameField[startBoardRow, startBoardColumn] == 0);
+            return (figure[currentFigureRow, currentFigureColumn] == 0 || board.GameField[startBoardRow, startBoardColumn].Symbol == " ");
         }
     }
 }
